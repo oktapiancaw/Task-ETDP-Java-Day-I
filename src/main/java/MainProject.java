@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,8 +6,8 @@ public class MainProject {
     static List<String> listMahasiswa = new ArrayList<String>();
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Integer choice = 0;
-        Integer number = 1;
+        int choice = 0;
+        int number = 1;
         do{
             System.out.println("====== Menu =====");
             System.out.println("1. Add Mahasiswa");
@@ -54,7 +53,7 @@ public class MainProject {
                 default:
                     System.exit(0);
             }
-            System.out.println("\n\n\n");
+            System.out.println("\n\n");
         }while (choice < 5);
 
     }
@@ -64,7 +63,10 @@ public class MainProject {
     }
 
     public static void showMahasiswa(){
-        System.out.println("Daftar Mahasiswa");
+        System.out.println("List Mahasiswa");
+        if(listMahasiswa.size() <= 0){
+            System.out.println("- None -");
+        }
         for (int iter = 0; iter < listMahasiswa.size(); iter++) {
             System.out.println((iter+1) + " - " + listMahasiswa.get(iter));
         }
